@@ -26,7 +26,7 @@ Func Main()
 
    DoLaunch()
 
-   ;Unlock behavior: Window based OR time based
+   ; Unlock behavior: Window based OR time based
    If Not $unlockOnWindow = "" Then
 	  LogMessage("unlock behavior: on target window")
 	  $hWin = WinWaitActive($unlockOnWindow, "", $unlockOnWindowTimeout)
@@ -61,20 +61,21 @@ Func Init()
    $audibleLockStatusChange = IniRead(@ScriptDir & "\lockedLauncher.ini", "General", "audibleLockStatusChange", "False")
 EndFunc
 
-;Disable user input (mouse and keyboard)
+; Disable user input (mouse and keyboard)
 Func LockInput()
    $iBlockResult = BlockInput($BI_DISABLE)
    if $audibleLockStatusChange = "True" Then Beep(500, 500)
    LogMessage("input disabled: " & $iBlockResult)
 EndFunc
 
-;Disable user input (mouse and keyboard)
+; Enable user input (mouse and keyboard)
 Func UnLockInput()
    $iBlockResult = BlockInput($BI_ENABLE)
    if $audibleLockStatusChange = "True" Then Beep(1000, 500)
    LogMessage("input enabled: " & $iBlockResult)
 EndFunc
 
+; Launch logic
 Func DoLaunch()
    Log("invoke: " & $CmdLineRaw)
    $iLaunchedPid = Run($CmdLineRaw)
