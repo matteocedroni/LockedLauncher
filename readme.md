@@ -1,0 +1,53 @@
+# Description
+
+Locked Launcher is a simple launch wrapper with block input feature. Thought for game emulator frontends, it will launch a process while blocking input from mouse and keyboard.
+
+Unwanted inputs sent during launch phase may prevent target emulator to show properly.
+Inspired by the same feature found in [Big Blue Frontend](https://sites.google.com/site/bigbluefrontend/features), I decided to write a wrapper that can be used by any frontend.
+
+#### Currently supports the following OS
+* Windows, any version supported by [Autoit](https://www.autoitscript.com/site/)
+
+#### Currently supports the following frontends
+* Any frontend that is able to launch game by configurable commands and arguments
+
+### Prerequisites
+Input block feature requires admin rights, but frontends tipically run with elevated permissions. To run elevated frontend bypassing UAC you may disable it, but I prefer bypassing UAC with the "On demand scheduled task technique". 
+
+## Usage
+Put lockedLauncher (exe and ini) in the same folder and modify game launch configuration in order to invoke lockedLauncher instead the current launcher.
+
+Example based on [Attract-Mode](http://attractmode.org/) frontend configuration:
+
+without lockedLauncher
+```
+...
+executable           C:\Games\RocketLauncher\RocketLauncher.exe
+args                 -s "SNK Neo Geo MVS" -r "[romfilename]" -p AttractMode -f "C:\Games\attract-v2.4.1-win64\attract.exe"
+...
+```
+
+with lockedLauncher
+```
+...
+executable           C:\Games\lockedLauncher.exe
+args                 C:\Games\RocketLauncher\RocketLauncher.exe -s "SNK Neo Geo MVS" -r "[romfilename]" -p AttractMode -f "C:\Games\attract-v2.4.1-win64\attract.exe"
+...
+```
+
+## Configuration
+
+Unlock behavior can be tuned by .ini file parameters
+#### Fixed delay unlock mode
+```
+unlockAfter
+```
+Inputs will be enabled after `unlockAfter` seconds from launch
+
+#### Target window unlock mode
+```
+unlockOnWindow
+unlockOnWindowTimeout
+unlockOnWindowDelay
+```
+Inputs will be enabled `unlockOnWindowDelay` seconds after `unlockOnWindow` became active. In any case inputs will be enabled after `unlockOnWindowTimeout` seconds from launch
