@@ -1,6 +1,6 @@
 # Description
 
-Locked Launcher is a simple launch wrapper with block input feature. Thought for game emulator frontends, it will launch a process while blocking input from mouse and keyboard.
+Locked Launcher is a simple launch wrapper with block input feature. Thought for game emulator frontends, it will launch a process while blocking inputs from mouse and keyboard.
 
 Unwanted inputs sent during launch phase may prevent target emulator to show properly.
 Inspired by the same feature found in [Big Blue Frontend](https://sites.google.com/site/bigbluefrontend/features), I decided to write a wrapper that can be used by any frontend.
@@ -42,7 +42,7 @@ Unlock behavior can be tuned by .ini file parameters
 ```
 unlockAfter
 ```
-Inputs will be enabled after `unlockAfter` seconds from launch
+Inputs will be re-enabled after `unlockAfter` seconds from launch
 
 #### Target window unlock mode
 ```
@@ -50,4 +50,5 @@ unlockOnWindow
 unlockOnWindowTimeout
 unlockOnWindowDelay
 ```
-Inputs will be enabled `unlockOnWindowDelay` seconds after `unlockOnWindow` became active. In any case inputs will be enabled after `unlockOnWindowTimeout` seconds from launch
+Inputs will be re-enabled `unlockOnWindowDelay` seconds after `unlockOnWindow` became active. In any case inputs will be re-enabled after `unlockOnWindowTimeout` seconds from launch.
+`unlockOnWindow` can be filled with [Autoit expressions](https://www.autoitscript.com/autoit3/docs/intro/windowsadvanced.htm)
