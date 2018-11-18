@@ -50,5 +50,5 @@ unlockOnWindow
 unlockOnWindowTimeout
 unlockOnWindowDelay
 ```
-Inputs will be re-enabled `unlockOnWindowDelay` seconds after `unlockOnWindow` became active. In any case inputs will be re-enabled after `unlockOnWindowTimeout` seconds from launch.
+Inputs will be re-enabled `unlockOnWindowDelay` seconds after `unlockOnWindow` become active. In any case inputs will be re-enabled after `unlockOnWindowTimeout` seconds from launch.
 `unlockOnWindow` can be filled with [Autoit expressions](https://www.autoitscript.com/autoit3/docs/intro/windowsadvanced.htm)
