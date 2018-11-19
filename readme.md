@@ -12,7 +12,11 @@ Inspired by the same feature found in [Big Blue Frontend](https://sites.google.c
 * Any frontend that is able to launch game by configurable commands and arguments
 
 ### Prerequisites
-Input block feature requires admin rights, but frontends tipically run with elevated permissions. To run elevated frontend bypassing UAC you may disable it, but I prefer bypassing UAC with the "On demand scheduled task technique". 
+Input block feature requires admin rights, but frontends tipically run with elevated permissions. To run elevated frontend bypassing UAC you may disable it, but I prefer bypassing UAC with the "On demand scheduled task technique".
+
+## Features
+* Blocks inputs with configurable unlock mode
+* Prevents unwanted concurrent launch (system wide singleton)
 
 ## Usage
 Put lockedLauncher (exe and ini) in the same folder and modify game launch configuration in order to invoke lockedLauncher instead the current launcher.
