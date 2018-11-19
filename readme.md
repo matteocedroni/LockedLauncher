@@ -19,7 +19,8 @@ Input block feature requires admin rights, but frontends tipically run with elev
 * Prevents unwanted concurrent launch (system wide singleton)
 
 ## Usage
-Put lockedLauncher (exe and ini) in the same folder and modify game launch configuration in order to invoke lockedLauncher instead the current launcher.
+Download [latest release](https://github.com/matteocedroni/locked-launcher/releases/latest) and put exe and ini in file the same folder.
+Modify game launch configuration in order to invoke lockedLauncher instead the current launcher.
 
 Example based on [Attract-Mode](http://attractmode.org/) frontend configuration:
 
